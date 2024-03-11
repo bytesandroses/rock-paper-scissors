@@ -1,6 +1,6 @@
 function getComputerChoice() {
   let random_number = Math.random() * 3;
-  let randomIndex = Math.floor(randomIndex);
+  let randomIndex = Math.floor(random_number);
   let choices = ["Rock", "Paper", "Scissors"];  
   let computerChoice = choices[randomIndex];
 
@@ -41,13 +41,20 @@ function playRound(playerSelection, computerSelection) {
   return result;    
 }
 
+
 function playGame() {
   let playerWins = 0;
   let computerWins = 0;
   let result;
+  let playerSelection;
 
   for (let i = 0; i < 5; i++) {
-    result = playRound(prompt(), getComputerChoice());
+    playerSelection = prompt("Please choose either 'rock', 'paper', or 'scissors': ").toLowerCase();
+    while (!["rock", "paper", "scissors"].includes(playerSelection)) {
+      playerSelection = prompt("Sorry you have entered an invalid play. Please choose either 'rock', 'paper', or 'scissors'").toLowerCase();
+    }
+
+    result = playRound(playerSelection, getComputerChoice());
     if (result.includes("win")) {
       playerWins = playerWins + 1;
     } else if (result.includes("lose")) {
