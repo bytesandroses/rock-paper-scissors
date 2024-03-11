@@ -48,3 +48,26 @@ function playRound(playerSelection, computerSelection) {
   return result;    
 }
 
+function playGame() {
+  let playerWins = 0;
+  let computerWins = 0;
+  let result;
+
+  for (let i = 0; i < 5; i++) {
+    result = playRound(prompt(), getComputerChoice());
+    if (result.includes("win")) {
+      playerWins = playerWins + 1;
+    } else if (result.includes("lose")) {
+      computerWins = computerWins + 1;
+    }
+    console.log(result);
+  }
+
+  if (playerWins === computerWins) {
+    return "You tied";
+  } else if (playerWins > computerWins) {
+    return "You won!";
+  } else {
+    return "You lose";
+  }
+}
