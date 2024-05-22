@@ -71,3 +71,5 @@ function playGame() {
     return "You lose";
   }
 }
+
+playGame();
