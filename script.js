@@ -64,7 +64,7 @@ function playGame() {
   let humanChoice;
   let computerChoice;
 
-  for (let round = 0; round < 5; round++) {
+/*  for (let round = 0; round < 5; round++) {
     humanChoice = getHumanChoice();
     computerChoice = getComputerChoice();
     playRound(humanChoice, computerChoice);
@@ -78,7 +78,7 @@ function playGame() {
   }
   else if (humanScore == computerScore) {
     console.log("You tied!");
-  }
+  } */
 }
 
 playGame(); 
