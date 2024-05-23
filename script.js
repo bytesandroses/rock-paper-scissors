@@ -16,12 +16,6 @@ function getComputerChoice() {
   return computerChoice;
 }
 
-function getHumanChoice() {
-  let humanChoice = prompt("Please choose either 'rock', 'paper', or 'scissors': ");
-  
-  return humanChoice.toLocaleLowerCase;
-}
-
 let humanScore = 0;
 let computerScore = 0;
 
