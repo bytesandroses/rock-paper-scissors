@@ -1,11 +1,11 @@
 const rockButton = document.querySelector("#rock-button");
-rockButton.addEventListener("click", playRound);
+rockButton.addEventListener("click", playRound("rock", getComputerChoice()));
 
 const paperButton = document.querySelector("#paper-button");
-paperButton.addEventListener("click", playRound);
+paperButton.addEventListener("click", playRound("paper", getComputerChoice()));
 
 const scissorsButton = document.querySelector("#scissors-button");
-scissorsButton.addEventListener("click", playRound);
+scissorsButton.addEventListener("click", playRound("scissors", getComputerChoice()));
 
 function getComputerChoice() {
   let random_number = Math.random() * 3;
