@@ -84,7 +84,6 @@ function stopGame() {
   }
 }
 
-playGame(); 
 function displayWinner() {
   if (humanScore === 5) {
     gameWinnerDiv.innerHTML = ("Congratulations! You won!!! Refresh the page to restart.");
