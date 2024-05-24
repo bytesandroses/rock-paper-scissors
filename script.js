@@ -12,6 +12,8 @@ const gameResults = document.querySelector("#game-results");
 const humanScoreDiv = document.querySelector("#human-score");
 const computerScoreDiv = document.querySelector("#computer-score");
 
+const gameWinnerDiv = document.querySelector("#game-winner");
+
 function getComputerChoice() {
   let random_number = Math.random() * 3;
   let randomIndex = Math.floor(random_number);
@@ -67,6 +69,7 @@ function playRound(humanChoice, computerChoice) {
     }
 
     stopGame(); 
+    displayWinner();
   }
 
   humanScoreDiv.innerHTML = (`<strong>Your Score:</strong> ${humanScore}`);
@@ -78,5 +81,14 @@ function stopGame() {
     rockButton.disabled = true;
     paperButton.disabled = true;
     scissorsButton.disabled = true;
+  }
+}
+
+function displayWinner() {
+  if (humanScore === 5) {
+    gameWinnerDiv.innerHTML = ("Congratulations! You won!!! Refresh the page to restart.");
+  }
+  else if (computerScore === 5) {
+    gameWinnerDiv.innerHTML = ("Sorry, you lost this game. Try again by refreshing this page.");
   }
 }
