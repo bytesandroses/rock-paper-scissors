@@ -9,6 +9,9 @@ scissorsButton.addEventListener("click", () => playRound("scissors", getComputer
 
 const gameResults = document.querySelector("#game-results");
 
+const humanScoreDiv = document.querySelector("#human-score");
+const computerScoreDiv = document.querySelector("#computer-score");
+
 function getComputerChoice() {
   let random_number = Math.random() * 3;
   let randomIndex = Math.floor(random_number);
@@ -63,6 +66,9 @@ function playRound(humanChoice, computerChoice) {
       }
     }
   }
+
+  humanScoreDiv.innerHTML = (`<strong>Your Score:</strong> ${humanScore}`);
+  computerScoreDiv.innerHTML = (`<strong>Computer Score:</strong> ${computerScore}`);
 }
 
 function playGame() {
